@@ -1,0 +1,240 @@
+@import "~bulma";
+$batch-red: #c63c3d;
+$body-family: BlinkMacSystemFont, -apple-system, "Roboto", "Segoe UI", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  "Helvetica", "Arial", sans-serif;
+
+.image-controls-container {
+  .button.is-danger.is-outlined:focus {
+    background-color: white;
+    color: #c63c3d;
+    &:hover {
+      background-color: #c63c3d;
+      color: white;
+    }
+  }
+  height: 100vh;
+  max-height: 100%;
+  min-width: 200px;
+  width: 25%;
+
+  .image-controls-scrollable {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 86%;
+  }
+
+  .box {
+    padding: 10px;
+  }
+
+  .double-sided-toggle {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .toggle-label {
+      margin-right: 10px;
+    }
+    .toggle {
+      top: -10px;
+    }
+    .switch[type="checkbox"].is-danger:checked + label::before,
+    .switch[type="checkbox"].is-danger:checked + label:before {
+      background: #c63c3d;
+    }
+  }
+  .delete-btn-container {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    height: 25px;
+    .button {
+      display: none;
+      &.on-hover {
+        display: block;
+      }
+    }
+  }
+  .fill-btn-container {
+    margin-top: 10px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    .button {
+      display: none;
+      &.on-hover {
+        display: block;
+      }
+    }
+  }
+
+  .image-control-container {
+    max-height: 300px;
+    transition: max-height 0.25s ease-in-out;
+    .image-set-toggle {
+      cursor: pointer;
+    }
+    &.collapsed {
+      -moz-transition: max-height 0.5s ease-in-out;
+      -ms-transition: max-height 0.5s ease-in-out;
+      -o-transition: max-height 0.5s ease-in-out;
+      -webkit-transition: max-height 0.5s ease-in-out;
+      transition: max-height 0.5s ease-in-out;
+      max-height: 80px;
+      padding: 0;
+      overflow: hidden;
+      .carrot-icon {
+        transform: rotate(-135deg);
+      }
+    }
+    .carrot-icon {
+      right: 85px;
+      border: 3px solid;
+      border-radius: 2px;
+      border-right: 0;
+      border-top: 0;
+      content: " ";
+      display: block;
+      height: 0.725em;
+      pointer-events: none;
+      position: relative;
+      transform: rotate(-45deg);
+      transform-origin: center;
+      width: 0.725em;
+      z-index: 4;
+    }
+    .image-set-header {
+      margin-left: 15px;
+      color: $batch-red;
+      font-weight: bold;
+    }
+    .image-inputs-container {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+      .image-size {
+        display: flex;
+        width: 40%;
+        .width-container,
+        .height-container {
+          width: 50%;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .image-input {
+        width: 65%;
+      }
+      .image-quantity {
+        display: flex;
+        width: 60%;
+        justify-content: flex-end;
+        align-items: center;
+        .image-input {
+          width: 30%;
+        }
+      }
+    }
+    .quantity-btn {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -o-user-select: none;
+      display: block;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      margin: 8px;
+      font-size: 1rem;
+      &.decrease {
+        color: $batch-red;
+        border: 1px solid #dbdbdb;
+      }
+      &.increase {
+        background-color: $batch-red;
+        color: white;
+        border: 1px solid $batch-red;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .height-container {
+      margin-left: 5px;
+    }
+    .dimension-label {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    .image-input {
+      padding: 5px;
+      margin-right: 5px;
+    }
+    .dropzone-container {
+      &:hover {
+        background: #fafafa;
+      }
+      .flex-center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .dropzone {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed black;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 10px 0 10px;
+      display: block;
+      img {
+        height: 99%;
+      }
+      div {
+        height: 100%;
+        line-height: 100px;
+        text-align: center;
+      }
+      .dropzone-placeholder-text {
+        font-size: 0.75em;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+      }
+      .is-loading {
+        color: black;
+        position: relative;
+        pointer-events: none;
+        &:after {
+          @include loader;
+          position: absolute;
+          top: calc(50% - 2.5em);
+          left: calc(50% - 2.5em);
+          width: 5em;
+          height: 5em;
+        }
+        label {
+          font-size: 0.85em;
+        }
+      }
+    }
+    .image-preview {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  .add-image-container {
+    text-align: center;
+    padding: 20px;
+    margin: 1px 0;
+    .button {
+      font-size: 0.9em;
+      font-weight: bold;
+      height: 35px;
+      width: 120px;
+    }
+  }
+}

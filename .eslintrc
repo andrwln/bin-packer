@@ -1,0 +1,65 @@
+// ESLint Reset - A starter .eslintrc file that resets all rules to off and includes a description of what each rule does.
+// From here, enable the rules that you care about by changing the 0 to a 1 or 2.
+// 1 means warning (will not affect exit code) and 2 means error (will affect exit code).
+// See: https://gist.github.com/ghostwords/40936f11091b87987e56
+// See: http://eslint.org/docs/rules/
+// See: https://github.com/feross/eslint-config-standard
+
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parser": "babel-eslint",
+
+  "settings": {
+    "ecmascript": 7,
+    "jsx": true,
+    "polyfills": ["fetch", "promises"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "globalReturn": true,
+      "modules": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true, // browser global variables
+    "node": true, // Node.js global variables and Node.js-specific rules
+    "jest": true, // adds all of the Mocha testing global variables
+    "es6": true // ECMAScript 6
+  },
+  "plugins": [
+    "compat", // Allow configuration of target browser/s (npm i -D eslint-plugin-compat)
+    "prettier"
+  ],
+  "globals": {
+    "$": true,
+    "_": true,
+    "jQuery": true,
+    "Handlebars": true,
+    "Marionette": true,
+    "Backbone": true,
+    "cy": true,
+    "assert": true,
+    "Mn": true,
+    "moment": true,
+    "define": true,
+    "request": true
+  },
+  "rules": {
+    "prettier/prettier": [2, { "singleQuote": true }],
+    "one-var": 0,
+    "compat/compat": 2, // required by eslint-plugin-compat
+    "spaced-comment": 0,
+    "no-debugger": 0,
+    "import/no-unresolved": 0,
+    "semi": [1, "always"]
+  }
+}

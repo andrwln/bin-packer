@@ -1,0 +1,120 @@
+.review-page-container {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+  .review-top-bar-container {
+    display: flex;
+    height: 65px;
+    padding: 0;
+    background-color: white;
+    border-radius: 0;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: #4a4a4a;
+    .product-detail {
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 20px;
+      .item {
+        width: 15%;
+        font-weight: bold;
+        &.quantity {
+          width: 30%;
+        }
+        .back-to-upload {
+          padding-left: 15px;
+          color: #c63c3d;
+          &:hover {
+            cursor: pointer;
+          }
+          &::before {
+            right: 15px;
+            top: 14px;
+            border: 3px solid;
+            border-radius: 2px;
+            border-right: 0;
+            border-top: 0;
+            content: " ";
+            display: block;
+            height: 0.725em;
+            pointer-events: none;
+            position: relative;
+            transform: rotate(45deg);
+            transform-origin: center;
+            width: 0.725em;
+            z-index: 4;
+          }
+        }
+        .sub-text {
+          font-size: 0.7rem;
+          font-weight: normal;
+          font-style: italic;
+        }
+        .quantity-highlight {
+          color: #c63c3d;
+          font-weight: bold;
+        }
+      }
+    }
+    .cart-header {
+      width: 20%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #c63c3d;
+      color: white;
+      font-weight: bold;
+      &:hover {
+        cursor: pointer;
+        background-color: #a52626;
+      }
+      .add-to-cart-btn {
+        font-size: 1.2rem;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .review-main-content {
+    display: flex;
+    .canvas-area-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      margin: 0 25px;
+      .batch-detail {
+        width: 25%;
+        font-size: 2rem;
+      }
+    }
+    .order-summary-container {
+      width: 20%;
+      height: fit-content;
+      font-weight: bold;
+      .header {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+        &.total {
+          border-top: 1px solid;
+        }
+        .subtext {
+          font-style: italic;
+          font-weight: normal;
+        }
+        .stake-radio {
+          vertical-align: middle;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}

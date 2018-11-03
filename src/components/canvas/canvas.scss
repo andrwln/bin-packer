@@ -1,0 +1,105 @@
+$black: #000000;
+
+.canvases-container {
+  height: 100%;
+  margin-top: 30px;
+  display: flex;
+  margin-left: 30px;
+  .canvas-label {
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .canvas-info {
+    font-size: 0.75em;
+    display: flex;
+    height: 16px;
+    .clickable {
+      display: flex;
+      width: 50%;
+      font-weight: bold;
+      font-size: 1.5em;
+
+      cursor: pointer;
+      color: #3273dc;
+      &:hover {
+        color: #363636;
+      }
+    }
+    .canvas-info-left {
+      text-align: left;
+      width: 50%;
+      .pointer {
+        transform: rotate(45deg);
+      }
+    }
+    .canvas-info-right {
+      display: flex;
+      justify-content: flex-end;
+      width: 50%;
+      .pointer {
+        transform: rotate(-135deg);
+      }
+    }
+    .canvas-info-middle {
+      text-align: center;
+      width: 60%;
+    }
+    .pointer {
+      top: 5px;
+      border: 3px solid;
+      border-radius: 2px;
+      border-right: 0;
+      border-top: 0;
+      content: "";
+      display: block;
+      height: 0.725em;
+      pointer-events: none;
+      position: relative;
+
+      transform-origin: center;
+      width: 0.725em;
+    }
+  }
+  .sheet-group {
+    margin-top: 10px;
+  }
+  .paginated-sheet {
+    position: absolute;
+    div {
+      position: relative;
+      background-color: white;
+      border: 1px solid #cccccc;
+      display: inline-block;
+    }
+    .bottom {
+      border-top: 0;
+      &.left {
+        border-left: 0;
+      }
+      &.right {
+        border-right: 0;
+      }
+    }
+    .side {
+      &.left {
+        border-right: 0;
+      }
+      &.right {
+        border-left: 0;
+      }
+    }
+  }
+}
+.canvas-container:last-child {
+  margin-left: 20px;
+}
+
+canvas {
+  border: 1px solid $black;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+}

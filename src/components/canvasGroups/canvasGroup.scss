@@ -1,0 +1,68 @@
+.canvas-layout-container {
+  max-height: 100vh;
+  display: flex;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+  .box {
+    border-radius: 0;
+  }
+  .box:not(:last-child),
+  .level:not(:last-child),
+  .columns:not(:last-child) {
+    margin-bottom: 1px;
+  }
+  .canvas-controls-container {
+    width: 80%;
+    background: #fafafa;
+    padding: 0;
+    .canvas-area-container {
+      display: flex;
+
+      .batch-detail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25%;
+        font-size: 3em;
+        .highlight {
+          color: #c63c3d;
+        }
+      }
+      .canvas-area {
+        width: 80%;
+      }
+    }
+  }
+  .canvas-top-bar-container {
+    display: flex;
+    padding: 0;
+    height: 65px;
+    align-items: center;
+    font-weight: bold;
+  }
+}
+
+.canvas-control-line {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.canvas-controls {
+  margin: 0 25px;
+}
+
+.new-canvas-controls {
+  margin-bottom: 25px;
+  left: 5%;
+}
+
+html {
+  background-color: hsl(0, 0%, 96%);
+  body {
+    font-size: 0.8rem;
+  }
+}
